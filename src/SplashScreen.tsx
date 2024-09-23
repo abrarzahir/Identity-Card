@@ -7,7 +7,7 @@ const SplashScreen: FC = () => {
         <SafeAreaView style={{ flex: 1 }}>
             <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
                 <StatusBar hidden={true} />
-                <Image style={{ width: '100%', height: '100%', resizeMode: 'stretch', }} source={require('../IdentityCard/assets/splashScreen.jpg')} />
+                <Image style={{ width: '100%', height: '100%', resizeMode: 'stretch', }} source={require('../assets/splashScreen.jpg')} />
             </View>
         </SafeAreaView>
     );

@@ -1,7 +1,15 @@
 // Import libraries
 import React, { useState, useEffect } from 'react';
-import { View, Text, StyleSheet } from 'react-native';
-import SplashScreen from './SplashScreen';
+import { View, Text, StyleSheet, Image,  } from 'react-native';
+import SplashScreen from './src/SplashScreen';
+import HomeScreen from './src/HomeScreen';
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import IdScreen from './src/screens/IdScreen';
+import BarcodeScreen from './src/screens/BarcodeScreen';
+
+// Create the navigation stack
+const Stack = createNativeStackNavigator();
 
 // Create the main component
 const App = () => {
@@ -24,9 +32,33 @@ const App = () => {
 
   // Otherwise, return the main app component
   return (
-    <View style={styles.container}>
-      <Text>MyComponent</Text>
-    </View>
+    <NavigationContainer>
+      <Stack.Navigator initialRouteName="Home">
+        <Stack.Screen
+          name="Home"
+          component={HomeScreen}
+          options={{ headerShown: false }}
+        />
+        <Stack.Screen
+          name="Id"
+          component={IdScreen}
+          options={{ 
+            // title: 'ID Screen', 
+            headerStyle: { backgroundColor: '#004e74' }, // Set navigation bar color to red
+            headerTintColor: '#fff', // Optional: set the text/icon color to white for contrast 
+          }}
+        />
+        <Stack.Screen
+          name="Barcode"
+          component={BarcodeScreen}
+          options={{ 
+            // title: 'Barcode Screen',
+            headerStyle: { backgroundColor: '#004e74' }, // Set navigation bar color to red
+            headerTintColor: '#fff', // Optional: set the text/icon color to white for contrast 
+            }}
+        />
+      </Stack.Navigator>
+    </NavigationContainer>
   );
 };
 
@@ -37,6 +69,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
   },
+  
 });
 
 // Make this component available to the app
