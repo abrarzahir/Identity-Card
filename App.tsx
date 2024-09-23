@@ -43,7 +43,7 @@ const App = () => {
           name="Id"
           component={IdScreen}
           options={{ 
-            // title: 'ID Screen', 
+            title: 'Back', 
             headerStyle: { backgroundColor: '#004e74' }, // Set navigation bar color to red
             headerTintColor: '#fff', // Optional: set the text/icon color to white for contrast 
           }}
@@ -52,7 +52,7 @@ const App = () => {
           name="Barcode"
           component={BarcodeScreen}
           options={{ 
-            // title: 'Barcode Screen',
+            title: 'Back',
             headerStyle: { backgroundColor: '#004e74' }, // Set navigation bar color to red
             headerTintColor: '#fff', // Optional: set the text/icon color to white for contrast 
             }}

@@ -72,7 +72,7 @@ const HomeScreen = () => {
             </View>
 
             <View style={styles.imageContainerFooter}>
-                <Image source={imageSourceFoo} style={styles.image} />
+            <Image source={imageSourceFoo} style={styles.image} />
             </View>
 
         </ScrollView>

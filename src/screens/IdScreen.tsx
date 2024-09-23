@@ -11,10 +11,12 @@ const aspectRatioFooter = 16 / 4;
 const IdScreen = () => {
 
   const [currentTime, setCurrentTime] = useState('');
+  const [currentDate, setCurrentDate] = useState('');
 
   useEffect(() => {
     const interval = setInterval(() => {
       const now = new Date();
+      setCurrentDate(now.toLocaleDateString());
       setCurrentTime(now.toLocaleTimeString());
     }, 1000); // Update every second
 
@@ -31,7 +33,8 @@ const IdScreen = () => {
         </View>
 
         {/* Display the current local time */}
-      <Text style={styles.timeText}>{currentTime}</Text>
+        <Text style={styles.timeText}>Last checked with server:</Text>
+        <Text style={styles.timeText}>{currentDate} {currentTime}</Text>
 
         {/* Footer Image */}
         <View style={styles.imageContainerFooter}>
@@ -63,10 +66,10 @@ const styles = StyleSheet.create({
     aspectRatio: aspectRatioHeader, // Maintain aspect ratio
   },
   timeText: {
-    fontSize: 24,
+    fontSize: 20,
     fontWeight: 'bold',
     textAlign: 'center',
-    marginVertical: 10,
+    
   },
 });
 
