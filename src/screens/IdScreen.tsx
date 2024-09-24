@@ -2,6 +2,7 @@
 import React, { useEffect, useState } from 'react';
 import { View, Text, StyleSheet, Image } from 'react-native';
 
+
 const imageSource = require('../../assets/idcard.jpg');
 const imageSourceFoo = require('../../assets/footer.jpg');
 
@@ -27,17 +28,17 @@ const IdScreen = () => {
       <View style={styles.container}>
         {/* Barcode Image */}
         <View style={styles.imageContainer}>
-            <Image source={imageSource} style={styles.image} resizeMode="contain" />
+          <Image source={imageSource} style={styles.image} resizeMode="contain" />
         </View>
 
         {/* Display the current local time */}
-      <Text style={styles.timeText}>{currentTime}</Text>
+        <Text style={styles.timeText}>{currentTime}</Text>
 
         {/* Footer Image */}
         <View style={styles.imageContainerFooter}>
-            <Image source={imageSourceFoo} style={styles.image} resizeMode="contain" />
+          <Image source={imageSourceFoo} style={styles.image} resizeMode="contain" />
         </View>
-    </View>
+      </View>
     </View>
   );
 };
