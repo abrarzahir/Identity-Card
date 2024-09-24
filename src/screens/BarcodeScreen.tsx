@@ -4,13 +4,13 @@ import { View, StyleSheet, Image } from 'react-native';
 
 const imageSource = require('../../assets/barCode.jpg');
 const imageSourceFoo = require('../../assets/footer.jpg');
-const aspectRatioHeader = 16 / 16; // Adjust as needed for your header image
+const aspectRatioHeader = 16 / 25; // Adjust as needed for your header image
 const aspectRatioFooter = 16 / 4;
 
 const BarcodeScreen = () => {
   return (
     <View style={styles.container}>
-        {/* Barcode Image */}
+        {/* Centered Barcode Image */}
         <View style={styles.imageContainer}>
             <Image source={imageSource} style={styles.image} resizeMode="contain" />
         </View>
@@ -27,7 +27,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#FFF',
-    justifyContent: 'space-between', // Ensures space is distributed evenly
+    justifyContent: 'space-between', // Distributes space between items
   },
   imageContainerFooter: {
     width: '100%', // Full screen width
@@ -39,6 +39,9 @@ const styles = StyleSheet.create({
     height: '100%', // Full height of the container
   },
   imageContainer: {
+    flex: 1, // Use remaining space to center the image
+    justifyContent: 'center', // Center the image vertically
+    alignItems: 'center', // Center the image horizontally
     width: '100%', // Full screen width
     height: undefined, // No fixed height
     aspectRatio: aspectRatioHeader, // Maintain aspect ratio
